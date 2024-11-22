@@ -1,8 +1,15 @@
 <div class="trainer-detail">
-  <h2>{{ trainerDetail.name }}</h2>
-  <img [src]="trainerDetail.imageUrl" [alt]="trainerDetail.name" />
-  <p><strong>Age:</strong> {{ trainerDetail.age }}</p>
-  <p><strong>About...</strong> {{ trainerDetail.bigSnopsies }}</p>
-  <p><strong>Pokemons:</strong></p>
-  <app-pokemon-list [pokemonList]="trainerDetail.pokemons"></app-pokemon-list>
+  <h2 class="trainer-name">{{ trainerDetail.name }}</h2>
+  <img [src]="trainerDetail.imageUrl" [alt]="trainerDetail.name" class="trainer-image" />
+  <div class="trainer-info">
+    <p><strong>Age:</strong> {{ trainerDetail.age }}</p>
+    <p><strong>About:</strong> {{ trainerDetail.bigSnopsies }}</p>
+    <p><strong>Number of Pokémon:</strong> {{ calculateNumberOfPokemons(trainerDetail) }}</p>
+    <p><strong>Average Pokémon Level:</strong> {{ calculateAveragePokemonLevel(trainerDetail) }}</p>
+  </div>
+  <div class="pokemon-list-section">
+    <h3>Pokemons:</h3>
+    <app-pokemon-list [pokemonList]="trainerDetail.pokemons"></app-pokemon-list>
+  </div>
+  <button (click)="goBack()" class="back-button">Volver</button>
 </div>

@@ -7,6 +7,6 @@ import { PokemonModule } from '../pokemon/pokemon.module';
 @NgModule({
   imports: [CommonModule, PokemonModule],
   declarations: [TrainerListComponent, TrainerDetailComponent],
-  exports: [TrainerListComponent],
+  exports: [TrainerListComponent, TrainerDetailComponent],
 })
 export class TrainerModule {}

@@ -1,8 +1,38 @@
-tr:hover {
-    background-color: gold;
-    cursor: pointer;
-  }
+/* trainer-list.component.css */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Space between the logo and the cards */
+}
 
-thead {
-  background-color: gold;
+.logo {
+  width: 150px; /* Adjust based on the actual size of your logo */
+}
+
+.trainer-cards-container {
+  display: flex;
+  justify-content: center; /* Centers the cards horizontally on the page */
+  flex-wrap: wrap; /* Allows cards to wrap onto the next line */
+  gap: 20px; /* Space between cards */
+}
+
+.trainer-card {
+  width: 30%; /* Adjust based on desired width of each card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-color: #fff; /* Card background */
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.trainer-image {
+  width: 100%; /* Image takes full width of the card */
+  height: auto;
+}
+
+.trainer-info {
+  padding: 10px;
+  text-align: center;
 }

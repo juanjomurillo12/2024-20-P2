@@ -1,39 +1,14 @@
-<div>
-  <div>
-    <div *ngIf="selected">
-      <app-trainer-detail
-        [trainerDetail]="selectedTrainer"
-      ></app-trainer-detail>
+<div class="trainer-cards-container">
+  <div
+    *ngFor="let trainer of trainers"
+    class="trainer-card"
+    (click)="navigateToDetail(trainer.id)"
+  >
+    <img [src]="trainer.imageUrl" alt="Image of {{ trainer.name }}" class="trainer-image" />
+    <div class="trainer-info">
+      <h3>{{ trainer.name }}</h3>
+      <p>{{ trainer.smallSnopsies }}</p>
+      <p><strong>Number of Pokémon:</strong> {{ calculateNumberOfPokemons(trainer) }}</p>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th class="h4">Trainers's Name</th>
-          <th class="h4">Trainer's Image</th>
-          <th class="h4">Trainer's Samll snapshot</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          *ngFor="let t of trainers"
-          class="row-table"
-          (click)="onSelected(t)"
-        >
-          <td>
-            <dd>{{ t.name }}</dd>
-          </td>
-          <td>
-            <img
-              [src]="t.imageUrl"
-              alt="Trainer's Image"
-              class="img-thumbnail"
-            />
-          </td>
-          <td>
-            <dd>{{ t.smallSnopsies }}</dd>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
